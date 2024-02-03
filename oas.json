@@ -1,0 +1,78 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Café API",
+      "version": "1.0.0",
+      "description": "API para listar y ver precios de cafés"
+    },
+    "servers": [
+      {
+        "url": "https://c1fb-181-46-235-171.ngrok-free.app"
+      }
+    ],
+    "paths": {
+      "/cafes": {
+        "get": {
+          "description": "Obtener la lista de cafés",
+          "operationId": "GetCafeList",
+          "responses": {
+            "200": {
+              "description": "Lista de cafés",
+              "content": {
+                "application/json": {
+                  "example": [
+                    {
+                      "id": 1,
+                      "nombre": "Café Americano",
+                      "precio": 2.5
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "/cafes/{id}": {
+        "get": {
+          "description": "Obtener información de un café por su ID",
+          "operationId": "GetCafe",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Información del café",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "id": 1,
+                    "nombre": "Café Americano",
+                    "precio": 2.5
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Café no encontrado",
+              "content": {
+                "application/json": {
+                  "example": {
+                    "mensaje": "Café no encontrado"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

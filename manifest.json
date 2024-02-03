@@ -1,0 +1,17 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Cafe pugin damian",
+    "name_for_model": "Cafe_plugin_damian",
+    "description_for_human": "Manage your cafes from chat",
+    "description_for_model": "Help the user to manager his complex coffe business.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "http://127.0.0.1:3000/oas.json"
+    },
+    "logo_url": "https://brigthbyte.com/img/robot.png",
+    "contact_email": "damian.cipolat@gmail.com",
+    "legal_info_url": "https://brigthbyte.com/"
+}
